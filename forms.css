@@ -1,0 +1,99 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Centered container */
+.container {
+    max-width: 400px;
+    width: 100%; /* Full width on small screens */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2e2e2e;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+    text-align: center;
+    position: relative; /* For glowing effect */
+}
+
+/* Background glow effect */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: radial-gradient(circle, rgba(255, 204, 0, 0.2) 0%, transparent 70%);
+    z-index: -1; /* Behind the container */
+}
+
+/* Heading styles */
+h1 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+p {
+    margin-bottom: 20px;
+}
+
+/* Input and textarea styles */
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus {
+    border-color: #fff;
+    background-color: #555;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffcc00;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* Confirmation message styles */
+#confirm h1 {
+    color: #00ff00;
+    margin-top: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+}
